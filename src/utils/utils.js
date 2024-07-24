@@ -30,4 +30,24 @@ export const getQustionByType = ( option, capital ) => {
   return `${capital} is the capital of`
 }
 
+export const removeNullValues = (item) => {
+  if (Array.isArray(item)) {
+  
+      // Recursively remove null values from nested arrays
+      const filteredArray = item
+          .map((subItem) => removeNullValues(subItem)).filter(Boolean)
+          .flat(1);
+      return [...new Set(filteredArray)].filter(
+          (subItem) => 
+              subItem !== null && subItem !== undefined,
+      );
+  } else {
+  
+      // Remove null values from non-array items
+      return item !== null && item !== undefined ? [item] : []
+  }
+}
 
+export const timeout = (delay) => {
+  return new Promise( res => setTimeout(res, delay) )
+}

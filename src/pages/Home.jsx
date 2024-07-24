@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 import bg from '../assets/world.gif'
 
+
 const Home = () => {
   return (
     <Box bgImage={bg} bgPos='center' bgRepeat='no-repeat' bgSize='cover' w='100%' p='8'>
@@ -13,15 +14,15 @@ const Home = () => {
               as='h2'
               size='2xl'
               textAlign='center'
-              sx={{ '-webkit-text-stroke-width': '2px', '-webkit-text-stroke-color': 'purple' }}
+              sx={{ color: 'yellow.500' }}
             >
-              County Quest
+              Country Quest
             </Heading>
             <Heading
               as='h4'
               size='md'
               textAlign='center'
-              sx={{ '-webkit-text-stroke-width': '1px', '-webkit-text-stroke-color': 'purple' }}
+              sx={{ color: 'yellow.500' }}
             >
               Test your knowledge about the world
             </Heading>

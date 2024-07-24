@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom'
 import { Flex } from '@chakra-ui/react'
 
 
-const Lay = () => {
+const Layout = () => {
   return (
     <Flex w='100wv' h='100vh'>
       <Outlet />
@@ -12,4 +12,4 @@ const Lay = () => {
   )
 }
 
-export default Lay
+export default Layout

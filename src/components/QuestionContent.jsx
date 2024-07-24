@@ -9,13 +9,10 @@ import monuments from '../assets/monuments.jpg'
 import { getQustionByType } from '../utils/utils'
 
 
-const QuestionContent = ({ timeLeft, stateQuestions, activeStep }) => {
+const QuestionContent = ({ timeLeft, stateQuestions, activeStep, played, corect, incorect, setPlayed, setCorect, setincorect }) => {
 
   const [questions, setQuestions] = useState([])
   const [question, setQuestion] = useState()
-  const [played, setPlayed] = useState(0)
-  const [corect, setCorect] = useState(0)
-  const [incorect, setincorect] = useState(0)
 
   useEffect(() => {
     if (stateQuestions) {
@@ -52,26 +49,24 @@ const QuestionContent = ({ timeLeft, stateQuestions, activeStep }) => {
   const code = question && question.code
   const name = question && question.name
 
-  // console.log('NAjj', questions, corect, incorect)
-
   return (
     <Box flex='1' h='100%' w='100%' display='flex' flexDir='column' justifyContent='space-between'>
       <Center>
-        {option === 0 && <Box flexShrink={0}>
+        {option === 0 && <Box>
           <Image
             src={monuments}
             alt='Green double couch with wooden legs'
             borderRadius='lg'
-            w='300px'
+            w='20.833vw'
           />
         </Box>
         }
-        {option === 1 && <Box w={{ sm: '80px', lg: '300px' }}>
+        {option === 1 && <Box>
           <ReactCountryFlag
             countryCode={code}
             svg
             style={{
-              width: '100%',
+              width: '20.833vw',
               height: 'auto',
             }}
             aria-label={name}

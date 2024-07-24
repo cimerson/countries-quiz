@@ -1,9 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
+import { store } from './reduxToolkit/store.js'
+import { Provider } from 'react-redux'
 
 import App from './App.jsx'
-// import './index.css'
 
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 
@@ -22,9 +23,11 @@ const client = new ApolloClient({
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      <ChakraProvider theme={customTheme}>
-        <App />
-      </ChakraProvider>
+      <Provider store={store}>
+        <ChakraProvider theme={customTheme}>
+          <App />
+        </ChakraProvider>
+      </Provider>
     </ApolloProvider>
   </React.StrictMode>,
 )

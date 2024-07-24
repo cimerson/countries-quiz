@@ -81,8 +81,6 @@ const Quiz = () => {
     )
   }
 
-  // console.log('QTTTT', questions) 
-
   return (
     <Box w='100%' h='100%' p='8'>
       <Center h='100%'>
